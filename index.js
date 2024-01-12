@@ -1,33 +1,17 @@
 
-/* document.querySelector("button").addEventListener("click", handleClick);
-
-function handleClick() {
-    alert("I got clicked!")
-}
- */
-/* document.querySelector("button").addEventListener("click", function () {
-    alert("I got clicked!")
-}); */
-
-//This works, but is not Angela's answer.
-/* document.body.addEventListener("click", event => {
-    if (event.target.nodeName == "BUTTON") {
-        alert("I got clicked!");
-    }
-  }); */
-
-
 //detect button press
 var allButtons = document.querySelectorAll(".drum").length;
 
 for (var i=0; i<allButtons; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function() {
         makeSound(this.innerHTML);
+        buttonAnimation(this.innerHTML);
     });
   }
 //detect key press
 document.addEventListener("keydown", function(event) {
     makeSound(event.key);
+    buttonAnimation(event.key);
   });
 
 function makeSound(key) {
@@ -73,7 +57,34 @@ function makeSound(key) {
     }
 };
 
+    //Animate Icon
+function buttonAnimation (currentKey) {
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+
+    setTimeout(function() {
+        activeButton.classList.remove("pressed");
+    }, 100);
+  };
+
 
           //alert("I clicked the "+(this.innerHTML)+" key!");
   
+
+/* document.querySelector("button").addEventListener("click", handleClick);
+
+function handleClick() {
+    alert("I got clicked!")
+}
+ */
+/* document.querySelector("button").addEventListener("click", function () {
+    alert("I got clicked!")
+}); */
+
+//This works, but is not Angela's answer.
+/* document.body.addEventListener("click", event => {
+    if (event.target.nodeName == "BUTTON") {
+        alert("I got clicked!");
+    }
+  }); */
 
