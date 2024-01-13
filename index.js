@@ -66,25 +66,3 @@ function buttonAnimation (currentKey) {
         activeButton.classList.remove("pressed");
     }, 100);
   };
-
-
-          //alert("I clicked the "+(this.innerHTML)+" key!");
-  
-
-/* document.querySelector("button").addEventListener("click", handleClick);
-
-function handleClick() {
-    alert("I got clicked!")
-}
- */
-/* document.querySelector("button").addEventListener("click", function () {
-    alert("I got clicked!")
-}); */
-
-//This works, but is not Angela's answer.
-/* document.body.addEventListener("click", event => {
-    if (event.target.nodeName == "BUTTON") {
-        alert("I got clicked!");
-    }
-  }); */
-
